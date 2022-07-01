@@ -3,7 +3,7 @@
 
 /**
  * main - is displaying Dora Korpar phrase
- * return - 1 when program is successfull
+ * Return: 1 when program is successfull
  */
 int main(void)
 {
