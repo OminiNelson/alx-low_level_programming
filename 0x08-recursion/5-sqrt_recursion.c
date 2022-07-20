@@ -14,6 +14,8 @@ int _sqrt_recursion(int n)
 /**
  * _sqrt - _sqrt_recursion
  * @i: dummy integer to help get the square root
+ * @n: the interger arguement
+ *
  * Return: sqrt
  */
 int _sqrt(int n, int i)
