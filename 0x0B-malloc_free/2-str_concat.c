@@ -1,42 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * alloc_grid -  allocate a 2 dimensional array of integers
- * @width: rows of matrix
- * @height: columns of string
+ * str_concat - concatenates (or adds) two strings.
+ * @s1: first string.
+ * @s2: second string.
+ * Author: Nelson Alexander aka OminiNelson
  *
- * Return: a pointer to a 2 dimensional array of integers or null
+ * Return: pointer of an array of chars
  */
-int **alloc_grid(int width, int height)
+char *str_concat(char *s1, char *s2)
 {
-	int i, j, **matrix;
+	char *strout;
+	unsigned int i, j, k, limit;
 
-	/* set fallback for Null */
-	if (width <= 0 || height <= 0)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	for (i = 0; s1[i] != '\0'; i++)
+		;
+
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+
+	strout = malloc(sizeof(char) * (i + j + 1));
+
+	if (strout == NULL)
 	{
+		free(strout);
 		return (NULL);
 	}
-	/* allocate memory for matrix */
-	matrix = (int **) malloc(height * sizeof(int *));
 
-	if (matrix == NULL)
-	{
-		return (NULL);
-	}
-	for (i = 0 ; i < height ; i++)
-	{
-		matrix[i] = (int *) malloc(width * sizeof(int));
-		if (matrix[i] == NULL)
-		{
-			for (i = i - 1; i >= 0 ; i--)
-				free(matrix[i]);
-			free(matrix);
-			return (NULL);
-		}
-		for (j = 0 ; j < width ; j++)
-			matrix[i][j] = 0;
-	}
-	return (matrix);
+	for (k = 0; k < i; k++)
+		strout[k] = s1[k];
+
+	limit = j;
+	for (j = 0; j <= limit; k++, j++)
+		strout[k] = s2[j];
+
+	return (strout);
 }
