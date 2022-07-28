@@ -1,20 +1,14 @@
 #include "main.h"
-
 /**
  * string_nconcat - concatenates two strings.
- * @s1: first string
- * @s2: second string
- * @n: index
+ * @s1: first string to copy
+ * @s2: second string to copy
+ * @n: number of bytes of s2 to copy
  *
- * Return: NULL for faliure, pointer to new memory
+ * Return: char pointer to newly allocated place in memory
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	unsigned int size1 = 0, size2 = 0, i;
-
-	{
 	unsigned int length = n, i;
 	char *newstr;
 
