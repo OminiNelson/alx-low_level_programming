@@ -1,6 +1,10 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+/* input standard libraries neccesary for maloc */
+#include <stdlib.h>
+#include <stdio.h>
+
 /* Inputing all prototype */
 int _putchar(char c);
 void *malloc_checked(unsigned int b);
