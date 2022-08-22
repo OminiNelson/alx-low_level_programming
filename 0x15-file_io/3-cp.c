@@ -53,13 +53,9 @@ int main(int argc, char *argv[])
 	if (close_r == -1 || close_w == -1)
 	{
 		if (close_r == -1)
-		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		}
 		if (close_w == -1)
-		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-		}
 		exit(100);
 	}
 	return (0);
